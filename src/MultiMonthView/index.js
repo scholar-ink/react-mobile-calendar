@@ -75,6 +75,8 @@ export default class MultiMonthView extends Component {
     endText: '',
     viewMoment:toMoment(),//初始月份
     monthNumber:1,//显示月份数
+    startMoment:null,
+    endMoment:null,
     rendDay:()=>{}
   };
   
@@ -82,11 +84,11 @@ export default class MultiMonthView extends Component {
     
     super(props);
     
-    const {monthNumber,viewMoment} = this.props;
+    const {monthNumber,viewMoment,startMoment,endMoment} = this.props;
     
-    this.startMoment = null;
+    this.startMoment = startMoment;
     
-    this.endMoment = null;
+    this.endMoment = endMoment;
     
     this.state = {
       
@@ -94,49 +96,16 @@ export default class MultiMonthView extends Component {
     
     }
     
+    this.doMap([]);
+    
   }
   
-  onDayClick(dayIndex,monthIndex) {
+  doMap(rangeDays){
   
-    let day = this.state.monthDays[monthIndex]['days'][dayIndex];
-  
-    let dayMoment = toMoment(day.moment);
-    
-    const {startMoment,endMoment} = this;
-  
-    if (this.startMoment == null) {
-    
-      this.startMoment = dayMoment;
-    
-    } else if (this.endMoment == null) {
-    
-      if (toMoment(dayMoment).isBefore(this.startMoment)) {
-      
-        this.startMoment = dayMoment;
-      
-      } else if (toMoment(dayMoment).isSame(this.startMoment)) {
-      
-        this.startMoment = null;
-      
-      } else {
-      
-        this.endMoment = dayMoment;
-      
-      }
-    
-    } else {
-    
-      this.startMoment = dayMoment;
-    
-      this.endMoment = null;
-    
-    }
   
     let star_time = this.startMoment != null ? format.full(this.startMoment) : 0;
   
     let end_time = this.endMoment != null ? format.full(this.endMoment) : star_time;
-  
-    let rangeDays = [];
   
     this.state.monthDays.map((month)=> {
     
@@ -181,6 +150,51 @@ export default class MultiMonthView extends Component {
         }
       })
     });
+    
+    return rangeDays;
+  }
+  
+  onDayClick(dayIndex,monthIndex) {
+  
+    let day = this.state.monthDays[monthIndex]['days'][dayIndex];
+  
+    let dayMoment = toMoment(day.moment);
+    
+    const {startMoment,endMoment} = this;
+  
+    if (this.startMoment == null) {
+    
+      this.startMoment = dayMoment;
+    
+    } else if (this.endMoment == null) {
+    
+      if (toMoment(dayMoment).isBefore(this.startMoment)) {
+      
+        this.startMoment = dayMoment;
+      
+      } else if (toMoment(dayMoment).isSame(this.startMoment)) {
+      
+        this.startMoment = null;
+      
+      } else {
+      
+        this.endMoment = dayMoment;
+      
+      }
+    
+    } else {
+    
+      this.startMoment = dayMoment;
+    
+      this.endMoment = null;
+    
+    }
+  
+  
+    let rangeDays = [];
+  
+    rangeDays = this.doMap(rangeDays);
+    
   
     let is_complete = this.startMoment != null && this.endMoment != null;
   
@@ -195,7 +209,6 @@ export default class MultiMonthView extends Component {
       this.endMoment = endMoment;
       
     }
-  
   }
   
   renderNav(viewMoment){
