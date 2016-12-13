@@ -1,13 +1,14 @@
 {
   "name": "react-mobile-calendar",
   "version": "1.0.0",
-  "description": "",
+  "description": "> 用react做的用于手机端显示的日历",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config ./webpack.config.js",
     "lib": "rimraf lib && npm run babel",
     "babel": "babel --out-dir lib src",
     "build": "npm run lib",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -37,10 +38,23 @@
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "scholar_ink",
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.2",
     "moment": "^2.17.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scholar-ink/react-mobile-calendar.git"
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "date-picker"
+  ],
+  "bugs": {
+    "url": "https://github.com/scholar-ink/react-mobile-calendar/issues"
+  },
+  "homepage": "https://github.com/scholar-ink/react-mobile-calendar#readme"
 }

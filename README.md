@@ -11,11 +11,7 @@
 
 ```shell
 
-git clone https://github.com/scholar-ink/react-ttouch
-
-npm install
-
-npm start
+npm i react-mobile-calendar
 
 ```
 
