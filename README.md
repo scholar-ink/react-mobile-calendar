@@ -102,6 +102,8 @@ ReactDOM.render(
 ## Docs
 
 * MultiMonthView
+    * startMoment: 开始时间
+    * endMoment: 结束时间
     * startText: 开始按钮显示的值
     * endText: 结束按钮显示的值
     * monthNumber: 显示月数

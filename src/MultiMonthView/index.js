@@ -94,7 +94,7 @@ export default class MultiMonthView extends Component {
       
       monthDays: getMonthDays(viewMoment,monthNumber)
     
-    }
+    };
     
     this.doMap([]);
     
