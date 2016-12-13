@@ -98,3 +98,21 @@ ReactDOM.render(
 );
 
 ```
+
+## Docs
+
+* MultiMonthView
+    * startText: 开始按钮显示的值
+    * endText: 结束按钮显示的值
+    * monthNumber: 显示月数
+    * viewMoment: 当前显示月份
+    * renderDay: 自定义渲染一天的数据
+    * onDayClick: 接收三个参数
+        * day:选中天数据
+        * rangeDays: 选中时间段
+        * is_complete: 是否选择完成
+    
+
+
+
+
