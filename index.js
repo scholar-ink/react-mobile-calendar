@@ -83,7 +83,6 @@ const rendDay = (day,props)=>{
 
     day.money = '暂无';
 
-
   }else{
 
     day.money = day_my.text;

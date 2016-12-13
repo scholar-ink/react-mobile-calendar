@@ -41,38 +41,13 @@ const days = [
     key:20161203,
     text:'¥ 1000'
   },
-  {
-    key:20161204,
-    text:'¥ 2000'
-  },
-  {
-    key:20161205,
-    text:'¥ 2000'
-  },
-  {
-    key:20161206,
-    text:'¥ 2000'
-  },
-  {
-    key:20161209,
-    text:'¥ 3000'
-  },
-  {
-    key:20161231,
-    text:'¥ 3000'
-  },
-  {
-    key:20170101,
-    text:'¥ 3000'
-  },
-  
 ];
 
 const onDayClick  = (day,rangeDays,is_complete)=>{
   
   for (var value of rangeDays) {
     
-    if(value.disable==false) {
+    if(value.disable==false) {  //使用rendDay 自定义的数据
       
       console.log(value.moment.format('YYYY-MM-DD')+'不可以订');
       
@@ -101,10 +76,9 @@ const rendDay = (day,props)=>{
 
   if(day_my==undefined){
 
-    day.disable = false;
+    day.disable = false;  //自定义数据
 
-    day.money = '暂无';
-
+    day.money = '暂无';  //自定义数据
 
   }else{
 
@@ -113,6 +87,7 @@ const rendDay = (day,props)=>{
     day.disable = true;
 
   }
+  //自定义 一天的样式
   props.children = <div className="day"><span className="textNum">{day.text}</span><span className="textMoney">{day.money}</span></div>;
 
 };
