@@ -1,11 +1,11 @@
 {
   "name": "react-mobile-calendar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "> 用react做的用于手机端显示的日历",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config ./webpack.config.js",
-    "lib": "rimraf lib && npm run babel",
+    "lib": "npm run babel",
     "babel": "babel --out-dir lib src",
     "build": "npm run lib",
     "prepublish": "npm run build",

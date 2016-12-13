@@ -1,0 +1,71 @@
+@import '../Style/themes/default';
+@import '../Style/mixins';
+
+@navBarPrefixCls: rmc-days;
+
+.@{navBarPrefixCls}{
+
+  .display-box();
+  .flex-direction(column);
+
+  .row{
+
+    .display-box();
+
+    .item{
+      .display-box();
+      .box-flex(1);
+      .flex-justify(center);
+      .box-align();
+      height: 50px;
+
+    }
+
+    .prev-month{
+      color: #b3b3b3;
+      visibility: hidden;
+    }
+
+    .next-month{
+      color: #b3b3b3;
+      visibility: hidden;
+    }
+
+    .week{
+
+      color: red;
+
+    }
+
+    .today{
+      color: red;
+    }
+
+    .range{
+
+
+      background: lighten(#f9aa95 ,20%)  !important
+    }
+
+    .active{
+
+      color: #fff !important;
+      background: #f9aa95 !important;
+
+    }
+  }
+}
+
+
+.rmc-nav-bar{
+
+  .display-box();
+
+  & &-item{
+    .display-box();
+    .box-flex(1);
+    .flex-justify(center);
+    .box-align();
+    height: 40px;
+  }
+}
