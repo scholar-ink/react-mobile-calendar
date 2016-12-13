@@ -70,9 +70,7 @@ const onDayClick  = (day,rangeDays,is_complete)=>{
 
 const rendDay = (day,props)=>{
 
-  let day_my = days.find((value)=>{
-    return value.key==day.number
-  });
+  let day_my = days.find((value)=>(value.key==day.number));
 
   if(day_my==undefined){
 
@@ -85,7 +83,6 @@ const rendDay = (day,props)=>{
     day.money = day_my.text;
 
     day.disable = true;
-
   }
   //自定义 一天的样式
   props.children = <div className="day"><span className="textNum">{day.text}</span><span className="textMoney">{day.money}</span></div>;
