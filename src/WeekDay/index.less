@@ -1,0 +1,17 @@
+@import '../Style/themes/default';
+@import '../Style/mixins';
+
+@navBarPrefixCls: rmc-week-day;
+
+.@{navBarPrefixCls}{
+
+  .display-box();
+
+  & &-item{
+    .display-box();
+    .box-flex(1);
+    .flex-justify(center);
+    .box-align();
+    height: 40px;
+  }
+}
