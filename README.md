@@ -21,8 +21,7 @@ npm i react-mobile-calendar
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MultiMonthView,{DatePicker}  from './src'
-import './index.less'
+import MultiMonthView,{DatePicker}  from 'react-mobile-calendar'
 
 const days = [
   {
