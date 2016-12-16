@@ -1,2 +1,84 @@
 @import './themes/default';
 @import './mixins';
+
+.rmc-nav-bar{
+  .display-box();
+
+  .item{
+    .display-box();
+    .box-flex(1);
+    .flex-justify(center);
+    .box-align();
+    height: 40px;
+  }
+
+  .arrow{
+    .display-box();
+    width: 40px;
+    text-align: center;
+    .box-align();
+    .flex-justify(center);
+  }
+}
+.rmc-week-day{
+
+  .display-box();
+
+  & &-item{
+    .display-box();
+    .box-flex(1);
+    .flex-justify(center);
+    .box-align();
+    height: 40px;
+  }
+}
+.rmc-days{
+
+  .display-box();
+  .flex-direction(column);
+
+  .row{
+
+    .display-box();
+
+    .item{
+      .display-box();
+      .box-flex(1);
+      .flex-justify(center);
+      .box-align();
+      height: 50px;
+
+    }
+
+    .prev-month{
+      color: #b3b3b3;
+      visibility: hidden;
+    }
+
+    .next-month{
+      color: #b3b3b3;
+      visibility: hidden;
+    }
+
+    .week{
+
+      color: red;
+
+    }
+
+    .today{
+      color: red;
+    }
+
+    .range{
+      color: #fff !important;
+      background: #0fbd50 !important;
+    }
+
+    .active{
+      color: #fff !important;
+      background: #0fbd50 !important;
+
+    }
+  }
+}

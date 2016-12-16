@@ -3,7 +3,6 @@
  */
 import React, { PropTypes, Component } from 'react'
 import chunk from 'lodash/chunk'
-import './index.less'
 import toMoment from '../Utils/toMoment'
 import format from '../Utils/format'
 import NavBar from '../NavBar'
@@ -191,7 +190,7 @@ export default class MonthView extends Component {
       <div>
         <NavBar onRowClick={this.onRowClick} isShowArrow={true} viewMoment={this.state.viewMoment}/>
         <WeekDay/>
-        <div className="rmc-calendar">
+        <div className="rmc-days">
           {this.renderDays()}
         </div>
       </div>

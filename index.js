@@ -97,6 +97,8 @@ const rendDay = (day,props)=>{
 ReactDOM.render(
   
   <div>
+    <DatePicker defaultDay="2016-12-03" />
+  
     <MultiMonthView startMoment="2016-12-03" endMoment="2016-12-06" startText="入住" endText="退房" monthNumber="5" viewMoment="2016-12" onDayClick={onDayClick} rendDay={rendDay}/>
   </div>,
   document.getElementById('root')

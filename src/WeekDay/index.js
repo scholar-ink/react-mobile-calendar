@@ -2,7 +2,6 @@
  * Created by zhouchao on 16/12/9.
  */
 import React, { PropTypes, Component } from 'react'
-import './index.less'
 
 export default class WeekDay extends Component {
   

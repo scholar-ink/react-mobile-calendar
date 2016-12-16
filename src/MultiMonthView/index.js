@@ -3,7 +3,6 @@
  */
 import React, { PropTypes, Component } from 'react'
 import chunk from 'lodash/chunk'
-import './index.less'
 import toMoment from '../Utils/toMoment'
 import format from '../Utils/format'
 import NavBar from '../NavBar'
