@@ -1,3 +1,6 @@
+<div style="padding:30px">
+<img src="https://github.com/scholar-ink/react-mobile-calendar/blob/master/.github/preview.gif" width="300" />
+</div>
 # react-mobile-calendar
 > 用react做的用于手机端显示的日历
 
