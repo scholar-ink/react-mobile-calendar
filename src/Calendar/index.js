@@ -14,7 +14,7 @@ export default class MonthView extends Component {
   static defaultProps = {
     viewMoment:toMoment(),//初始月份
     defaultDay:null,
-    rendDay:()=>{}
+    renderDay:()=>{}
   };
   
   constructor(props){
@@ -150,7 +150,7 @@ export default class MonthView extends Component {
       style: {}
     };
     
-    this.props.rendDay(day,props);
+    this.props.renderDay(day,props);
     
     return <div onClick={()=>this.onDayClick(day)} {...props} ></div>
   }
