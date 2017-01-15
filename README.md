@@ -14,7 +14,7 @@
 
 ```shell
 
-npm i react-mobile-calendar
+npm i cjd6568358-react-mobile-calendar
 
 ```
 
