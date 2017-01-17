@@ -1,4 +1,6 @@
 .display-box() {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -24,6 +26,8 @@
 
 .box-flex(@scale: 1) {
   flex: @scale;
+  -webkit-box-flex: @scale;
+  -ms-flex: @scale;
 }
 
 .border-radius(@radius: 0) {

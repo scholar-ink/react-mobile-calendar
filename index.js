@@ -80,10 +80,20 @@ const onDateDayClick = (day)=>{
 };
 
 const rendDay = (day,props)=>{
-
-  let day_my = days.find((value)=>{
-    return value.key==day.number
+  
+  
+  let day_my;
+  
+  days.forEach(function (value,index) {
+    
+    if(value.key==day.number){
+      return day_my;
+    }
   });
+
+  // let day_my = days.find((value)=>{
+  //   return value.key==day.number
+  // });
 
   if(day_my==undefined){
 
@@ -101,6 +111,7 @@ const rendDay = (day,props)=>{
   props.children = <div className="day"><span className="textNum">{day.text}</span><span className="textMoney">{day.money}</span></div>;
 
 };
+
 
 ReactDOM.render(
   
