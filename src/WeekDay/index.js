@@ -33,11 +33,16 @@ export default class WeekDay extends Component {
       {
         names.map((name, index) => {
     
-          const props = {
+          
+          let props = {
             key: index,
             className: 'rmc-week-day-item',
             children: name
           };
+  
+          if(index==0||index==6){
+            props.className = 'rmc-week-day-item week';
+          }
           
           return <div {...props} ></div>
     
