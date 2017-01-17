@@ -71,6 +71,14 @@ const onDayClick  = (day,rangeDays,is_complete)=>{
   return true;
 };
 
+const onDateDayClick = (day)=>{
+  
+  console.log(day);
+  
+  return true;
+  
+};
+
 const rendDay = (day,props)=>{
 
   let day_my = days.find((value)=>{
@@ -97,7 +105,7 @@ const rendDay = (day,props)=>{
 ReactDOM.render(
   
   <div>
-    <DatePicker defaultDay="2016-12-03" />
+    <DatePicker defaultDay="2016-12-03" onDayClick={onDateDayClick} />
   
     <MultiMonthView startMoment="2016-12-03" endMoment="2016-12-06" startText="入住" endText="退房" monthNumber="5" viewMoment="2016-12" onDayClick={onDayClick} rendDay={rendDay}/>
   </div>,

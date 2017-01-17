@@ -14,7 +14,8 @@ export default class MonthView extends Component {
   static defaultProps = {
     viewMoment:toMoment(),//初始月份
     defaultDay:null,
-    rendDay:()=>{}
+    rendDay:()=>{},
+    onDayClick:()=>{}
   };
   
   constructor(props){
@@ -98,9 +99,10 @@ export default class MonthView extends Component {
     day.type = 2;
   
     day.className = ' active';
-
-    this.setState({days:this.state.days,day:day.moment});
-    
+  
+    if(this.props.onDayClick(day)){
+      this.setState({days:this.state.days,day:day.moment});
+    }
   }
   
   renderDay(day,index){
