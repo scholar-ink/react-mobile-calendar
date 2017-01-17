@@ -1,6 +1,6 @@
 {
   "name": "react-mobile-calendar",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "> 用react做的用于手机端显示的日历",
   "main": "lib/index.js",
   "scripts": {
