@@ -6,6 +6,8 @@ import chunk from 'lodash/chunk'
 import toMoment from '../Utils/toMoment'
 import format from '../Utils/format'
 import NavBar from '../NavBar'
+import WeekDay from '../WeekDay'
+
 
 const getMonthDays = (viewMoment,monthNumber)=>{
   
@@ -76,6 +78,7 @@ export default class MultiMonthView extends Component {
     monthNumber:1,//显示月份数
     startMoment:null,
     endMoment:null,
+    isShowWeek: false,
     rendDay:()=>{}
   };
   
@@ -281,6 +284,8 @@ export default class MultiMonthView extends Component {
   renderMonth(month,monthIndex){
       return <div>
         {this.renderNav(month.viewMoment)}
+
+        {this.props.isShowWeek ? <WeekDay/> : ''}
         {this.renderDays(month,monthIndex)}
       </div>
   }

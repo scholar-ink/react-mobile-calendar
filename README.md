@@ -99,7 +99,7 @@ ReactDOM.render(
 
 ## Docs
 
-* MultiMonthView
+* MultiMonthView 多月选择器
     * startMoment: 开始时间
     * endMoment: 结束时间
     * startText: 开始按钮显示的值
@@ -111,7 +111,13 @@ ReactDOM.render(
         * day:选中天数据
         * rangeDays: 选中时间段
         * is_complete: 是否选择完成
-    
+        
+* DatePicker 时间选择器
+    * defaultDay: 默认显示时间
+    * viewMoment: 当前显示月份
+    * renderDay: 自定义渲染一天的数据
+    * onDayClick: 接收三个参数
+        * day:选中天数据
 
 
 
