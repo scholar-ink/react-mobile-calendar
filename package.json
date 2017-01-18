@@ -1,7 +1,7 @@
 {
-  "name": "react-mobile-calendar",
-  "version": "1.0.3",
-  "description": "> 用react做的用于手机端显示的日历",
+  "name": "cjd6568358-react-mobile-calendar",
+  "version": "1.0.4",
+  "description": "> 用react做的用于手机端显示的日历-私人定制版",
   "main": "lib/index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --config ./webpack.config.js",
@@ -38,7 +38,7 @@
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   },
-  "author": "scholar_ink",
+  "author": "cjd6568358",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.2",
@@ -46,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scholar-ink/react-mobile-calendar.git"
+    "url": "git+https://github.com/cjd6568358/cjd6568358-react-mobile-calendar.git"
   },
   "keywords": [
     "react",
@@ -54,7 +54,7 @@
     "date-picker"
   ],
   "bugs": {
-    "url": "https://github.com/scholar-ink/react-mobile-calendar/issues"
+    "url": "https://github.com/cjd6568358/cjd6568358-react-mobile-calendar/issues"
   },
-  "homepage": "https://github.com/scholar-ink/react-mobile-calendar#readme"
+  "homepage": "https://github.com/cjd6568358/cjd6568358-react-mobile-calendar#readme"
 }
