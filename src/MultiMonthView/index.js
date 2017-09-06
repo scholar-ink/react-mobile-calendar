@@ -3,6 +3,7 @@
  */
 import React, { PropTypes, Component } from 'react'
 import chunk from 'lodash/chunk'
+import { cloneDeep } from 'lodash/lang'
 import toMoment from '../Utils/toMoment'
 import format from '../Utils/format'
 import NavBar from '../NavBar'
@@ -159,7 +160,9 @@ export default class MultiMonthView extends Component {
   onDayClick(dayIndex,monthIndex) {
   
     let day = this.state.monthDays[monthIndex]['days'][dayIndex];
-  
+    
+    var days = cloneDeep(this.state.monthDays[monthIndex]['days']);
+    
     let dayMoment = toMoment(day.moment);
     
     const {startMoment,endMoment} = this;
@@ -191,24 +194,29 @@ export default class MultiMonthView extends Component {
       this.endMoment = null;
     
     }
+    
+    var monthDays =  this.state.monthDays;
   
   
     let rangeDays = [];
   
     rangeDays = this.doMap(rangeDays);
-    
   
     let is_complete = this.startMoment != null && this.endMoment != null;
+    
+    console.log(this.state.monthDays);
   
     if (this.props.onDayClick(day, rangeDays, is_complete)){
   
       this.setState({monthDays: this.state.monthDays});
   
     }else{
+  
+      this.state.monthDays[monthIndex]['days'] = days;
       
-      this.startMoment = startMoment;
-      
-      this.endMoment = endMoment;
+      // this.startMoment = startMoment;
+      //
+      // this.endMoment = endMoment;
       
     }
   }
@@ -264,6 +272,8 @@ export default class MultiMonthView extends Component {
     };
   
     this.props.rendDay(day,props);
+    
+    
   
     return <div onClick={()=>this.onDayClick(dayIndex,monthIndex)} {...props} ></div>
   }
@@ -302,7 +312,20 @@ export default class MultiMonthView extends Component {
   
   }
   
+  arrayCopy(arr){
+  
+      var newArr = [];
+      for (var i=0; i<arr.length; i++) {
+        newArr.push(this.arrayCopy(arr[i]));
+      }
+      return newArr;
+    
+  }
+  
+  
   render(){
+    
+    
     
     return (
       <div className="rmc-days">
